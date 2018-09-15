@@ -1,0 +1,207 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	
+	"Print to console with newline": {
+		"prefix": "coutn",
+		"body": [ "std::cout << ${1:what} << '\\n';" ],
+		"description": "Print to console with newline (cout)"
+	},
+
+	"Print to console with newline and flush": {
+		"prefix": "coutnf",
+		"body": [ "std::cout << ${1:what} << std::endl;" ],
+		"description": "Print to console with newline and flush (cout)"
+	},
+
+	"(stderr) Print to console with newline": {
+		"prefix": "cerrn",
+		"body": [ "std::cerr << ${1:what} << '\\n';" ],
+		"description": "Print to console with newline (cerr)"
+	},
+
+	"(stderr)  Print to console with newline and flush": {
+		"prefix": "cerrnf",
+		"body": [ "std::cerr << ${1:what} << std::endl;" ],
+		"description": "Print to console with newline and flush (cerr)"
+	},
+
+	"variable": {
+		"prefix": "var",
+		"body": [ "${1:cv_qual_type} ${2:name} { ${3:asssigned_value} };" ],
+		"description": "generic variable initialization"
+	},
+
+	"constant expression": {
+		"prefix": "constcex",
+		"body": "constexpr ${1:int} ${2:name} { ${3:assigned_value} };",
+		"description": "constexpr constant"
+	},
+
+	"using namespace": {
+		"prefix": "usingns",
+		"body": [ "using namespace ${1:ns};" ],
+		"description": "using namespace"
+	},
+
+	"namespace": {
+		"prefix": "nsn",
+		"body": [ "namespace ${1:name} {\n\t${2:/* members */}\n}" ],
+		"description": "new namespace"
+	},
+	
+	"namespace alias": {
+		"prefix": "nsalias",
+		"body": [ "namespace ${1:alias} = ${2:long_ns};" ],
+		"description": "Namespace alias for long_ns"
+	},
+
+	"simple function": {
+		"prefix": "func",
+		"body": "${1:void} ${2:func} () {\n\t${3:/*body*/}\n}",
+		"description": "basic function"
+	},
+
+	"constexpr function": {
+		"prefix": "funccex",
+		"body": "constexpr ${1:int} ${2:func} (${3:arguments}) {\n\t${4:/* body */}\n}",
+		"description": "constexpr function"
+	},
+
+	"inlined function": {
+		"prefix": "funci",
+		"body": "inline ${1:void} ${2:func} () {\n\t${3:/*body*/}\n}",
+		"description":"basic inlined function"
+	},
+
+	"specifiers function": {
+		"prefix": "funcs",
+		"body": "${1:void} ${2:func} () ${3:specifiers} {\n\t${4:/*body*/}\n}",
+		"description":"basic function with specifiers"
+	},
+
+	"templated function": {
+		"prefix": "funct",
+		"body": "template<typename ${1:type}>\n${2:void} ${3:func} () {\n\t${4:/*body*/}\n}",
+		"description": "basic templated function"
+	},
+	
+	"non-pod struct": {
+		"prefix": "structnp",
+		"body": "struct ${1:name} {\npublic:\n\t${1:name}();\n\t~${1:name}()\n};",
+		"description": "Struct with ctor and dtor"
+	},
+	
+	"defaulted special functions struct": {
+		"prefix": "structsd",
+		"body": "struct ${1:name} {\npublic:\n\t${1:name}() = default;\n\t~${1:name}() = default;\n\t${1:name}(const ${1:name}&) = default;\n\t${1:name}(${1:name}&&) = default;\n\t${1:name}& operator=(const ${1:name}&) = default;\n\t${1:name}& operator=(${1:name}&&) = default;\n};",
+		"description": "Struct with special functions"
+	},
+
+	"struct with protected, public and private member access specifier and inhithered struct/class": {
+		"prefix": "structppp",
+		"body": "struct ${1:name} : public ${2:inhitered} {\nprivate:\n\t${3:/* private members */}\nprotected:\n\t${4:/* protected members*/}\npublic:\n\t${5:/* public members */}\n};",
+		"description": "Struct with protected, public, private access specifiers"
+	},
+
+	"struct with private and public member access specifier": {
+		"prefix": "structpp",
+		"body": "struct ${1:name} {\nprivate:\n\t${2:/* private members */}\npublic:\n\t${3:/* public members */}\n};",
+		"description": "Struct with private and public access specifier"
+	},
+
+	"templated struct": {
+		"prefix": "structt",
+		"body": "template<typename ${1:Type}>\nstruct ${2:name} {\n\t/* struct definition */\n};",
+		"description": "Templated empty struct"
+	},
+
+	"templated struct inherits": {
+		"prefix": "structth",
+		"body": "template<typename ${1:Type}>\nstruct ${2:name} : public ${1:Type} {\n\t/* struct definition */\n};",
+		"description": "Templated empty struct which inherits \"Type\" template argument"
+	},
+
+	"alias": {
+		"prefix": "alias",
+		"body": "using ${1:alias} = ${2:typeid};",
+		"description": "type aliasing (using)"
+	},
+
+	"templated alias": {
+		"prefix": "aliast",
+		"body": "template<typename ${1:Type}>\nusing ${2:alias} = ${3:typeid}<${1:Type}>;",
+		"description": "templated type aliasing (using)"
+	},
+
+	"prototype": {
+		"prefix": "fproto",
+		"body": "${1:type} ${2:attributes} ${3:func}(${4:arguments});",
+		"description": "Prototype for function"
+	},
+
+	"tagged union": {
+		"prefix": "uniont",
+		"body": "struct ${1:name} {\n\tenum class type {\n\t\t${2:/*types*/}\n\t};\n\n\ttype t;\n\tunion {\n\t\t${3:/* fields */}\n\t} value;\n};",
+		"description": "tagged union"
+	},
+
+	"inline gcc assembly": {
+		"prefix": "gcc_asm",
+		"body": "//gcc inline assembly block\n__asm__(\n\t${1:\"mnemonic op1, op2;\"\n\t\"mnemonic op1, op2;\"}\n\t\t: /* output */\n\t\t: /* input */\n\t\t: /* clobbed registers */);",
+		"description": "generate inline assembly block for gcc"
+	},
+
+	"inline gcc assembly preventing optimization": {
+		"prefix": "gcc_asmv",
+		"body": "//gcc inline assembly block\n__asm__ __volatile__(\n\t${1:\"mnemonic op1, op2;\"\n\t\"mnemonic op1, op2;\"}\n\t\t: /* output */\n\t\t: /* input */\n\t\t: /* clobbed registers */);",
+		"description": "generate inline assembly block for gcc (__volatile__)"
+	},
+
+	"preprocessor include": {
+		"prefix": "incl",
+		"body": "#include <${1:header}>",
+		"description": "preprocessor include directive"
+	},
+
+	"preprocessor define": {
+		"prefix": "defm",
+		"body": "#define ${1:MACRO_NAME} ${2:EXPAND_VALUE}",
+		"description": "preprocessor define directive"
+	},
+
+	"preprocessor if": {
+		"prefix": "ifdp",
+		"body": "#if ${1:expression}\n\t${2:/* block */}\n#endif",
+		"description": "preprocessor if directive"
+	},
+	 
+	"preprocessor if-then-else": {
+		"prefix": "ifedp",
+		"body": "#if ${1:expression}\n\t${2:/* block */}\n#else\n\t${3:/* block */}\n#endif",
+		"description": "preprocessor if-then-else directive"
+	},
+
+	"preprocessor ifdef": {
+		"prefix": "ifdef",
+		"body": "#ifdef ${1:PREPROC_MACRO}\n\t${2:/* block */}\n#endif",
+		"description": "preprocessor ifdef"
+	},
+
+	"preprocessor ifdef-then-else": {
+		"prefix": "ifedef",
+		"body": "#ifdef ${1:PREPROC_MACRO}\n\t${2:/* block */}\n#else\n\t${3:/* block */}\n#endif",
+		"description": "preprocessor ifdef-then-else"
+	}
+}
