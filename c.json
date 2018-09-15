@@ -1,0 +1,148 @@
+{
+	// Place your snippets for c here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	
+	"Print string literal" : {
+		"prefix": "print",
+		"body": "puts(\"${1:text}\");",
+		"description": "print a string"
+	},
+	
+	"Print left value" : {
+		"prefix": "printl",
+		"body": "puts(${1:lvalue});",
+		"description": "print something"
+	},
+
+	"Printformat" : {
+		"prefix": "printf",
+		"body": "printf(\"${1:format_string}\",${2:corresponds});",
+		"description": "print formatted"
+	},
+
+	"(stderr) Print string literal" : {
+		"prefix": "eprint",
+		"body": "fputs(\"${1:text}\", stderr);",
+		"description": "print a string"
+	},
+	
+	"(stderr) Print left value" : {
+		"prefix": "eprintl",
+		"body": "fputs(${1:lvalue}, stderr);",
+		"description": "print something"
+	},
+
+	"(stderr) Printformat" : {
+		"prefix": "eprintf",
+		"body": "fprintf(stderr, \"${1:format_string}\",${2:corresponds});",
+		"description": "print formatted"
+	},
+
+	"typedef": {
+		"prefix": "typedef",
+		"body": "typedef ${1:old_type} ${2:new_type_name};",
+		"description": "new type definition"
+	},
+	
+	"typedef function pointer": {
+		"prefix": "ftypedef",
+		"body": "typedef ${1:ftype} (*${3:new_type})(${2:/*arguments*/});",
+		"description": "new type defintion from function pointer"
+	},
+	
+	"variable": {
+		"prefix": "var",
+		"body": [ "${1:cv_qual_type} ${2:name} { ${3:asssigned_value} };" ],
+		"description": "generic variable initialization"
+	},
+	
+	"simple function": {
+		"prefix": "func",
+		"body": "${1:void} ${2:func} (${3:/*arguments*/}) {\n\t${4:/*body*/}\n}",
+		"description": "basic function"
+	},
+
+	"prototype": {
+		"prefix": "fproto",
+		"body": "${1:type} ${2:attributes} ${3:func}(${4:arguments});",
+		"description": "Prototype for function"
+	},
+
+	"tagged union": {
+		"prefix": "uniont",
+		"body": "enum ${1:name}_type {\n\t${2:/*types*/}\n};\n\nstruct ${1:name} {\n\tenum ${1:name}_type t;\n\tunion {\n\t\t${3:/* fields */}\n\t} value;\n};",
+		"description": "tagged union"
+	},
+
+	"inline gcc assembly": {
+		"prefix": "gcc_asm",
+		"body": "//gcc inline assembly block\n__asm__(\n\t${1:\"mnemonic op1, op2;\"\n\t\"mnemonic op1, op2;\"}\n\t\t: /* output */\n\t\t: /* input */\n\t\t: /* clobbed registers */);",
+		"description": "generate inline assembly block for gcc"
+	},
+
+	"inline gcc assembly preventing optimization": {
+		"prefix": "gcc_asmv",
+		"body": "//gcc inline assembly block\n__asm__ __volatile__(\n\t${1:\"mnemonic op1, op2;\"\n\t\"mnemonic op1, op2;\"}\n\t\t: /* output */\n\t\t: /* input */\n\t\t: /* clobbed registers */);",
+		"description": "generate inline assembly block for gcc (__volatile__)"
+	},
+
+	"preprocessor include": {
+		"prefix": "incl",
+		"body": "#include <${1:header}>",
+		"description": "preprocessor include directive"
+	},
+
+	"preprocessor define": {
+		"prefix": "defm",
+		"body": "#define ${1:MACRO_NAME} ${2:EXPAND_VALUE}",
+		"description": "preprocessor define directive"
+	},
+
+	"preprocessor if": {
+		"prefix": "ifdp",
+		"body": "#if ${1:expression}\n\t${2:/* block */}\n#endif",
+		"description": "preprocessor if directive"
+	},
+	 
+	"preprocessor if-then-else": {
+		"prefix": "ifedp",
+		"body": "#if ${1:expression}\n\t${2:/* block */}\n#else\n\t${3:/* block */}\n#endif",
+		"description": "preprocessor if-then-else directive"
+	},
+
+	"preprocessor ifdef": {
+		"prefix": "ifdef",
+		"body": "#ifdef ${1:PREPROC_MACRO}\n\t${2:/* block */}\n#endif",
+		"description": "preprocessor ifdef"
+	},
+
+	"preprocessor ifdef-then-else": {
+		"prefix": "ifedef",
+		"body": "#ifdef ${1:PREPROC_MACRO}\n\t${2:/* block */}\n#else\n\t${3:/* block */}\n#endif",
+		"description": "preprocessor ifdef-then-else"
+	},
+
+	"enum": {
+		"prefix": "enum",
+		"body": "enum ${1:name} {\n\t${2:/* consts */}\n};",
+		"description": "enumerator snippet"
+	},
+	
+	"gcc attribute" : {
+		"prefix": "gccattr",
+		"body": "__attribute__((__${1:attr}__))",
+		"description": "expand GCC attribute"
+	}
+
+}

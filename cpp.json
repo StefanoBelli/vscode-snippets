@@ -69,31 +69,31 @@
 
 	"simple function": {
 		"prefix": "func",
-		"body": "${1:void} ${2:func} () {\n\t${3:/*body*/}\n}",
+		"body": "${1:void} ${2:func} (${3:/*arguments*/}) {\n\t${4:/*body*/}\n}",
 		"description": "basic function"
 	},
 
 	"constexpr function": {
 		"prefix": "funccex",
-		"body": "constexpr ${1:int} ${2:func} (${3:arguments}) {\n\t${4:/* body */}\n}",
+		"body": "constexpr ${1:int} ${2:func} (${3:/*arguments*/}) {\n\t${4:/* body */}\n}",
 		"description": "constexpr function"
 	},
 
 	"inlined function": {
 		"prefix": "funci",
-		"body": "inline ${1:void} ${2:func} () {\n\t${3:/*body*/}\n}",
+		"body": "inline ${1:void} ${2:func} (${3:/*arguments*/}) {\n\t${4:/*body*/}\n}",
 		"description":"basic inlined function"
 	},
 
 	"specifiers function": {
 		"prefix": "funcs",
-		"body": "${1:void} ${2:func} () ${3:specifiers} {\n\t${4:/*body*/}\n}",
+		"body": "${1:void} ${2:func} (${3:/*arguments*/}) ${4:specifiers} {\n\t${5:/*body*/}\n}",
 		"description":"basic function with specifiers"
 	},
 
 	"templated function": {
 		"prefix": "funct",
-		"body": "template<typename ${1:type}>\n${2:void} ${3:func} () {\n\t${4:/*body*/}\n}",
+		"body": "template<typename ${1:type}>\n${2:void} ${3:func} (${4:/*arguments*/}) {\n\t${5:/*body*/}\n}",
 		"description": "basic templated function"
 	},
 	
@@ -203,5 +203,23 @@
 		"prefix": "ifedef",
 		"body": "#ifdef ${1:PREPROC_MACRO}\n\t${2:/* block */}\n#else\n\t${3:/* block */}\n#endif",
 		"description": "preprocessor ifdef-then-else"
+	},
+	
+	"gcc attribute" : {
+		"prefix": "gccattr",
+		"body": "__attribute__((__${1:attr}__))",
+		"description": "expand GCC attribute"
+	},
+
+	"enum": {
+		"prefix": "enum",
+		"body": "enum ${1:name} {\n\t${2:/* consts */}\n};",
+		"description": "enumerator snippet"
+	},
+
+	"scoped enum":  {
+		"prefix": "enumc",
+		"body": "enum class ${1:name} {\n\t${2:/* consts */}\n};",
+		"description": "scoped enumerator snippet"
 	}
 }
