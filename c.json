@@ -63,7 +63,7 @@
 	
 	"variable": {
 		"prefix": "var",
-		"body": [ "${1:cv_qual_type} ${2:name} { ${3:asssigned_value} };" ],
+		"body": [ "${1:cv_qual_type} ${2:name} = ${3:asssigned_value};" ],
 		"description": "generic variable initialization"
 	},
 	
@@ -143,6 +143,12 @@
 		"prefix": "gccattr",
 		"body": "__attribute__((__${1:attr}__))",
 		"description": "expand GCC attribute"
+	},
+
+	"header guard": {
+		"prefix": "guard",
+		"body": "#ifndef ${1:MACRO}\n#define ${1:MACRO}\n\n#endif //${1:MACRO}",
+		"description": "header guards"
 	}
 
 }

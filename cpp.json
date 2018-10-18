@@ -221,5 +221,11 @@
 		"prefix": "enumc",
 		"body": "enum class ${1:name} {\n\t${2:/* consts */}\n};",
 		"description": "scoped enumerator snippet"
+	},
+
+	"header guard": {
+		"prefix": "guard",
+		"body": "#ifndef ${1:MACRO}\n#define ${1:MACRO}\n\n#endif //${1:MACRO}",
+		"description": "header guards"
 	}
 }
